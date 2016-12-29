@@ -9,7 +9,7 @@
 3. [x] ~~CSS Variables~~
 4. [x] ~~Array Cardio, Day 1~~
 5. [x] ~~Flex Panel Gallery~~
-6. [ ] Type Ahead
+6. [x] ~~Type Ahead~~
 7. [ ] Array Cardio, Day 2
 8. [ ] Fun with HTML5 Canvas
 9. [ ] Dev Tools Domination

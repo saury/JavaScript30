@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+  
   <form class="search-form">
     <input type="text" class="search" placeholder="City or State">
     <ul class="suggestions">
@@ -14,9 +14,67 @@
       <li>or a state</li>
     </ul>
   </form>
-<script>
-const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+  <script>
+    const endpoint =
+      'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+    class HttpRequest {
+      constructor() {
+          this.get = this.get.bind(this);
+        }
+        /**
+         * http get fn
+         * @param  {[string]} url
+         * @return promise
+         */
+      get(url) {
+        let promise = new Promise(function (resolve, reject) {
+          let client = new XMLHttpRequest();
+          client.open('GET', url);
+          client.onreadystatechange = handler;
+          client.responseType = 'json';
+          client.setRequestHeader('Accept', 'application/json');
+          client.send();
 
-</script>
-  </body>
+          function handler() {
+            if (this.readyState !== 4) {
+              return;
+            }
+            if (this.status === 200) {
+              resolve(this.response);
+            } else {
+              reject(new Error(this.statusText));
+            }
+          }
+        });
+        return promise;
+      }
+    }
+
+    let http = new HttpRequest();
+
+    let dataList = [];
+    http.get(endpoint)
+      .then(function (data) {
+        dataList = data;
+        
+      }, function (error) {
+        throw 'newwork error, refresh the page for trying again';
+      })
+
+    document.querySelector('.search').addEventListener('keyup', function () {
+      let keyword = this.value;
+      let filterList = dataList.filter(obj => (obj.city.toLowerCase().indexOf(keyword.toLowerCase()) >= 0 || obj.state.toLowerCase().indexOf(keyword.toLowerCase()) >= 0))
+      let container = document.querySelector('.suggestions');
+      container.innerHTML = '';
+      filterList.map(list => {
+        let li = document.createElement("li");
+        li.innerHTML = `<span class='name'>${list.city}, ${list.state}</span>
+                        <span class='population'>${list.population}</span>`
+        container.append(li)
+      })
+    }, false)
+
+
+  </script>
+</body>
 </html>
