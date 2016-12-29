@@ -18,7 +18,7 @@
 
   <style>
     html {
-      background:#018DED url(http://unsplash.it/1500/1000?image=881&blur=50);
+      background:#018DED;
       background-size:cover;
       font-family:'helvetica neue';
       text-align: center;
@@ -55,18 +55,75 @@
       transform: translateY(-3px); /* account for the height of the clock hands */
     }
 
+    .clock-face::after{
+      position: absolute;
+      content: '' ;
+      left: 50%;
+      top: 50%;
+      width: 20px;
+      height: 20px;
+      background: #fff;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+    }
+
     .hand {
       width:50%;
       height:6px;
-      background:black;
       position: absolute;
       top:50%;
+      transform: rotate(90deg);
+      transform-origin: right center;
+    }
+    .hour-hand {
+      background: mediumvioletred;
+      width: 30%;
+      margin-top: -3px;
+      margin-left: 20%;
+    }
+    .min-hand {
+      margin-top: -3px;
+      background: mediumspringgreen;
+    }
+    .second-hand {
+      background: greenyellow;
+      height: 4px;
+      margin-top: -2px;
     }
 
   </style>
 
   <script>
 
+  let h, m, s;
+
+  // get the current hour min & sec
+  function  getTime() {
+    let current = new Date();
+    h = current.getHours();
+    m = current.getMinutes();
+    s = current.getSeconds();
+  }
+
+  // fn to change hour min & sec to angle
+  let toAngle = n => (90 + n / 60 * 360);
+
+  let updateAngle = (tar, angle) => {
+    tar.style.transform = `rotate(${angle}deg)`;
+  }
+
+  let renderClock = () => {
+    getTime();
+    ((domObj) => {
+      for(dom in domObj) {
+        updateAngle(document.querySelector(`.${dom}`), toAngle(domObj[dom]))
+      }
+    })({'hour-hand': h, 'min-hand': m, 'second-hand': s});
+  }
+
+  renderClock();
+
+  setInterval(renderClock, 1000);
 
   </script>
 </body>

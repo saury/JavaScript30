@@ -5,7 +5,7 @@
 > Folked repo for practice and fun!
 
 1. [x]  ~~JavaScript Drum Kit~~
-2. [ ] JS + CSS Clock 
+2. [x] ~~JS + CSS Clock ~~
 3. [ ] CSS Variables 
 4. [ ] Array Cardio, Day 1 
 5. [ ] Flex Panel Gallery
