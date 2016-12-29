@@ -7,7 +7,7 @@
 1. [x]  ~~JavaScript Drum Kit~~
 2. [x] ~~JS + CSS Clock~~
 3. [x] ~~CSS Variables~~
-4. [ ] Array Cardio, Day 1
+4. [x] ~~Array Cardio, Day 1~~
 5. [ ] Flex Panel Gallery
 6. [ ] Type Ahead
 7. [ ] Array Cardio, Day 2
