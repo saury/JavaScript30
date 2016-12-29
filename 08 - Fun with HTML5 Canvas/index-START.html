@@ -14,6 +14,32 @@
     margin:0;
   }
 </style>
+<script>
+  let isDrawing = false;
+  const canvas = document.querySelector('#draw');
+  const ctx = canvas.getContext('2d');
+  ctx.lineJoin = 'round';
+  ctx.lineCap = 'round';
 
+  let draw = e => {
+    if(e.type === 'mousedown') isDrawing = true;
+    if(!isDrawing) return;
+    isDrawing = true;
+
+    let hue = Math.floor(Math.random() * 360 + 1);
+    ctx.lineWidth = Math.floor(Math.random() * 60 + 1);
+    
+    ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
+    ctx.beginPath();
+    ctx.lineTo(e.offsetX, e.offsetY);
+    ctx.stroke();
+  }
+
+  canvas.addEventListener('mousedown', draw);
+  canvas.addEventListener('mousemove', draw);
+  canvas.addEventListener('mouseup', () => isDrawing = false);
+  canvas.addEventListener('mouseout', () => isDrawing = false);
+  
+</script>
 </body>
 </html>

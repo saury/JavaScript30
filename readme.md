@@ -11,7 +11,7 @@
 5. [x] ~~Flex Panel Gallery~~
 6. [x] ~~Type Ahead~~
 7. [x] ~~Array Cardio, Day 2~~
-8. [ ] Fun with HTML5 Canvas
+8. [x] ~~Fun with HTML5 Canvas~~
 9. [ ] Dev Tools Domination
 10. [ ] Hold Shift and Check Checkboxes
 11. [ ] Custom Video Player
