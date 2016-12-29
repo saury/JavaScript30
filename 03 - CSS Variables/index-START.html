@@ -48,6 +48,27 @@
   </style>
 
   <script>
+  const target = document.querySelector('img');
+  const ctrl_bdr = document.getElementById('spacing');
+  const ctrl_blur = document.getElementById('blur');
+  const ctrl_bdrc = document.getElementById('base');
+  
+  function updateStyle(formctrl, attr){
+    let unit = formctrl.hasAttribute('data-sizing') ? formctrl.getAttribute('data-sizing') : '';
+    target.style[attr] = attr === 'filter' ? `blur(${formctrl.value + unit})` : `${formctrl.value + unit}`;
+  }
+
+  window.onload = function(){
+    target.style.borderStyle = 'solid';
+    ((changes) => {
+      for(let ctrlAttr in changes) {
+        updateStyle(changes[ctrlAttr], ctrlAttr);
+        ((attr) => changes[attr].addEventListener('change', function(){
+          updateStyle(this, attr)
+        }))(ctrlAttr)
+      }
+    })({'borderWidth': ctrl_bdr, 'filter': ctrl_blur, 'borderColor': ctrl_bdrc})
+}
   </script>
 
 </body>
