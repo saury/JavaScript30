@@ -18,28 +18,52 @@
     }
 
     // Regular
+    console.log('haha')
 
     // Interpolated
-
+    console.log('hello %s', 'shit');
+    
     // Styled
+    console.log('%c hello shit', 'font-size: 20px;color: red');
 
     // warning!
+    console.warn('haha')
 
     // Error :|
+    console.error('haha')
 
     // Info
-
+    console.info('haha')
     // Testing
+    console.assert(1 === 2, 'that\'s wrong')
 
     // clearing
+    // console.clear();
 
     // Viewing DOM Elements
-
+    console.dir(document.querySelector('p'));
     // Grouping together
+    dogs.forEach(dog => {
+      console.group(`${dog.name}`)
+      console.log(`this is ${dog.name}`)
+      console.log(`I'm ${dog.age} years old`)
+      console.groupEnd(`${dog.name}`)
+    })
 
     // counting
+    console.count('shit')
+    console.count('shit')
+    console.count('shit')
+    console.count('shit')
 
     // timing
+    console.time('fetching');
+    fetch('https://api.github.com/users/saury')
+      .then(data => data.json())
+      .then(data => {
+        console.timeEnd('fetching');
+        console.log(data);
+      });
 
   </script>
 </body>
