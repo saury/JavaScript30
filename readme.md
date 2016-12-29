@@ -8,7 +8,7 @@
 2. [x] ~~JS + CSS Clock~~
 3. [x] ~~CSS Variables~~
 4. [x] ~~Array Cardio, Day 1~~
-5. [ ] Flex Panel Gallery
+5. [x] ~~Flex Panel Gallery~~
 6. [ ] Type Ahead
 7. [ ] Array Cardio, Day 2
 8. [ ] Fun with HTML5 Canvas
