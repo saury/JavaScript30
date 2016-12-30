@@ -18,7 +18,7 @@
 12. [x] ~~Key Sequence Detection~~
 13. [x] ~~Slide in on Scroll~~
 14. [x] ~~JavaScript References vs. Copying~~
-15. [ ] LocalStorage
+15. [x] ~~LocalStorage~~
 16. [ ] Mouse Move Shadow
 17. [ ] Sort Without Articles
 18. [ ] Adding Up Times with Reduce
