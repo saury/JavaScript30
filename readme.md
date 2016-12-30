@@ -19,7 +19,7 @@
 13. [x] ~~Slide in on Scroll~~
 14. [x] ~~JavaScript References vs. Copying~~
 15. [x] ~~LocalStorage~~
-16. [ ] Mouse Move Shadow
+16. [x] ~~Mouse Move Shadow~~
 17. [ ] Sort Without Articles
 18. [ ] Adding Up Times with Reduce
 19. [ ] Webcam Fun

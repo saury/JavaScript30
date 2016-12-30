@@ -25,12 +25,23 @@
   }
 
   h1 {
-    text-shadow: 10px 10px 0 rgba(0,0,0,1);
+    text-shadow: 10px 10px 0 rgba(0,0,0,.3);
     font-size: 100px;
   }
   </style>
 
 <script>
+  const target = document.querySelector('h1[contenteditable]');
+  const center = [(target.offsetLeft + target.offsetWidth / 2), (target.offsetTop + target.offsetHeight / 2)]
+  console.log(center);
+  
+
+  window.addEventListener('mousemove', e => {
+    shadow = [ - e.pageX + center[0], center[1] - e.pageY];
+    console.log(shadow);
+    target.style.textShadow = `${shadow[0] * .2}px ${shadow[1] * .2}px 0 rgba(5,100,100,.5), 
+                              ${shadow[0] * .3}px ${shadow[1] * .3}px 0 rgba(5,5,100,.3)`;
+  })
 </script>
 </body>
 </html>
