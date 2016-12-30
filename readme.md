@@ -17,7 +17,7 @@
 11. [ ] Custom Video Player
 12. [x] ~~Key Sequence Detection~~
 13. [x] ~~Slide in on Scroll~~
-14. [ ] JavaScript References vs. Copying
+14. [x] ~~JavaScript References vs. Copying~~
 15. [ ] LocalStorage
 16. [ ] Mouse Move Shadow
 17. [ ] Sort Without Articles

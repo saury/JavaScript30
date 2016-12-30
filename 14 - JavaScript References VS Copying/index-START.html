@@ -13,6 +13,8 @@
     const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
 
     // and we want to make a copy of it.
+    let clone = [...players];
+    console.log(clone)
 
     // You might think we can just do something like this:
 
@@ -41,10 +43,11 @@
     // and think we make a copy:
 
     // how do we take a copy instead?
-
+    // {...obj}
     // We will hopefully soon see the object ...spread
 
     // Things to note - this is only 1 level deep - both for Arrays and Objects. lodash has a cloneDeep method, but you should think twice before using it.
+    // JSON.parse(JSON.stringify(obj))
 
   </script>
 
