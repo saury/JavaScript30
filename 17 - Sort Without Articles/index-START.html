@@ -9,7 +9,7 @@
   <style>
     body {
       font-family: sans-serif;
-      background: url("https://source.unsplash.com/nDqA4d5NL0k/2000x2000");
+      /*background: url("https://source.unsplash.com/nDqA4d5NL0k/2000x2000");*/
       background-size: cover;
       display: flex;
       align-items: center;
@@ -45,6 +45,32 @@
 <script>
 const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
 
+let phantom = [];
+let cloneBands = [];
+let result = Array(bands.length);
+
+bands.forEach(band => {
+  cloneBands.push({'band': band, 'src': band})
+  band = band.replace(/^the |^an |^a /i, ' ').trim()
+  phantom.push(band);
+})
+
+cloneBands.map(obj => {
+  obj.band = obj.band.replace(/^the |^an |^a /i, ' ').trim()
+})
+
+console.log(cloneBands);
+phantom = phantom.sort((a,b) => a > b ? 1 : -1)
+console.log(phantom);
+
+cloneBands.map(obj => {
+  phantom.forEach((item, idx) =>{
+    if(item === obj.band) result[idx] = obj.src;
+  })
+})
+
+console.clear()
+// console.
 
 </script>
 
