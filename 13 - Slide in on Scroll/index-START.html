@@ -58,6 +58,28 @@
       };
     }
 
+    window.onload = function() {
+      var imgInfo = [];
+
+      [...document.querySelectorAll('img')].forEach((ele, idx) => {
+        imgInfo.push({
+          'dom': ele,
+          'top': ele.offsetTop,
+          'height': ele.offsetHeight
+        })
+      })
+      
+      window.addEventListener('scroll', e => {
+        imgInfo.forEach((info, idx) => {
+          if(((window.scrollY) >= (info.top + .5 * info.height - window.innerHeight)) && ((window.scrollY) <= (info.top + 1.5 * info.height - .5 * window.innerHeight))){
+              (info.dom).classList.add('active')
+          }
+          else {
+              (info.dom).classList.remove('active')
+          }
+        })
+      })
+    }
   </script>
 
   <style>
