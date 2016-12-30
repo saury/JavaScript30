@@ -13,7 +13,7 @@
 7. [x] ~~Array Cardio, Day 2~~
 8. [x] ~~Fun with HTML5 Canvas~~
 9. [x] ~~Dev Tools Domination~~
-10. [ ] Hold Shift and Check Checkboxes
+10. [x] ~~Hold Shift and Check Checkboxes~~
 11. [ ] Custom Video Player
 12. [ ] Key Sequence Detection
 13. [ ] Slide in on Scroll

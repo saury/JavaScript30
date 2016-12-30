@@ -104,6 +104,35 @@
   </div>
 
 <script>
+let shiftPressing = 0;
+let prevIdx = [0, 0];
+
+window.addEventListener('keydown', e => {
+  if(e.keyCode === 16) {
+    shiftPressing = 1;
+  }
+});
+window.addEventListener('keyup', e => {
+  if(e.keyCode === 16) {
+    shiftPressing = 0;
+  }
+});
+
+[...document.querySelectorAll('input[type="checkbox"]')].forEach((ele, index) => {
+  ele.addEventListener('change', function (e) { 
+    if(this.checked){
+      prevIdx.shift();
+      prevIdx.push(index);
+    }
+    if(this.checked && shiftPressing) {
+        [...document.querySelectorAll('input[type="checkbox"]')].forEach((el,idx) => {
+          if((idx <= prevIdx[1] && idx >= prevIdx[0]) || (idx >= prevIdx[1] && idx <= prevIdx[0])){
+            el.checked = true;
+          }
+        })
+    }
+   })
+})
 </script>
 </body>
 </html>
