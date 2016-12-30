@@ -15,7 +15,7 @@
 9. [x] ~~Dev Tools Domination~~
 10. [x] ~~Hold Shift and Check Checkboxes~~
 11. [ ] Custom Video Player
-12. [ ] Key Sequence Detection
+12. [x] ~~Key Sequence Detection~~
 13. [ ] Slide in on Scroll
 14. [ ] JavaScript References vs. Copying
 15. [ ] LocalStorage

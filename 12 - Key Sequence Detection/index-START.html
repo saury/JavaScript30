@@ -6,7 +6,16 @@
   <script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
 </head>
 <body>
+  <p>TYPE: 'wesbos' to active the gifs</p>
 <script>
+const pwd = 'wesbos';
+let pressed = Array(Array.from(pwd).length);
+
+window.addEventListener('keyup', e => {
+  pressed.shift();
+  pressed.push(e.key);
+  if(pressed.join('') === pwd) cornify_add();
+});
 </script>
 </body>
 </html>
