@@ -84,3 +84,18 @@ nav a {
   transition:all 0.2s;
   text-transform: uppercase;
 }
+
+nav.affix-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+nav.affix-top li.logo{
+  max-width: 210px;
+}
+
+nav.affix-top + .site-wrap{
+  transform: scale(1);
+  margin-top: 146px;
+}

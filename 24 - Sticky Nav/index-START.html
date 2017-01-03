@@ -54,7 +54,14 @@
   </div>
 
 <script>
+const nav = document.querySelector('nav');
+const navLogo = document.querySelector('nav .logo');
+const content = document.querySelector('.site-wrap')
+const breakPoint = nav.offsetTop;
 
+window.addEventListener('scroll', e => {
+  window.scrollY >= breakPoint ? nav.classList.add('affix-top') : nav.classList.remove('affix-top');
+},false)
 </script>
 
 </body>

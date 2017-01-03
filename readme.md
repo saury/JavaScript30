@@ -27,7 +27,7 @@
 21. [ ] Geolocation
 22. [x] ~~Follow Along Link Highlighter~~
 23. [ ] Speech Synthesis
-24. [ ] Sticky Nav
+24. [x] ~~Sticky Nav~~
 25. [ ] Event Capture, Propagation, Bubbling, and Once
 26. [ ] Stripe Follow Along Nav
 27. [ ] Click and Drag
