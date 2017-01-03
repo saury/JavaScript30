@@ -21,7 +21,7 @@
 15. [x] ~~LocalStorage~~
 16. [x] ~~Mouse Move Shadow~~
 17. [x] ~~Sort Without Articles~~
-18. [ ] Adding Up Times with Reduce
+18. [x] ~~Adding Up Times with Reduce~~
 19. [ ] Webcam Fun
 20. [ ] Speech Detection
 21. [ ] Geolocation

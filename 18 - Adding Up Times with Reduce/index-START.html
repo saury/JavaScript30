@@ -182,6 +182,22 @@
     </li>
 
 <script>
+  // ugly way:
+  // var totalSeconds = 0;
+  // [...document.querySelectorAll('[data-time]')].forEach(ele => {
+  //   var arr = ele.getAttribute('data-time').split(':');
+  //   totalSeconds += Number((arr[0])) * 60 + Number((arr[1]));
+  // })
+
+  // elegant way:
+  var totalSeconds = [...document.querySelectorAll('[data-time]')]
+    .map(ele => ele.getAttribute('data-time').split(':'))
+    .map(arr => Number((arr[0])) * 60 + Number((arr[1])))
+    .reduce((prev, current) => prev += current, 0);
+
+  console.log(`%c Video length: ${parseInt(totalSeconds / 3600)} hours, 
+              ${parseInt((totalSeconds % 3600) / 60 )} minutes, 
+              ${parseInt((totalSeconds % 3600) % 60 )} seconds.`, 'font-size: 20px;color: red')
 </script>
 </body>
 </html>
