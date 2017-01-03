@@ -35,6 +35,36 @@
   </div>
 
 <script>
+  const frame = document.querySelector('.items');
+  let dragging = false;
+  let startX = 0, endX = 0, currentX = 0;
+
+  let drag = (e) => {
+    if(!dragging) return;
+    e.preventDefault();
+    frame.classList.add('active');
+    endX = e.clientX;
+    let moveX = startX - endX;
+    frame.scrollLeft = currentX + moveX;
+  }
+  
+  frame.addEventListener('mousedown', (e) => {
+    dragging = true;
+    startX = e.clientX;
+    currentX = frame.scrollLeft;
+    frame.classList.add('active');
+  } ,false);
+
+  frame.addEventListener('mousemove', drag ,false);
+
+  frame.addEventListener('mouseup', () => {
+    dragging = false;
+    frame.classList.remove('active');
+  } ,false);
+  frame.addEventListener('mouseleave', () => {
+    dragging = false;
+    frame.classList.remove('active');
+  } ,false);
 </script>
 
   </body>
