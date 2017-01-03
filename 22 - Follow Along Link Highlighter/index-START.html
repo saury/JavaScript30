@@ -24,9 +24,27 @@
       <p>Esse quibusdam, ad, ducimus cupiditate <a href="">nulla</a>, quae magni odit <a href="">totam</a> ut consequatur eveniet sunt quam provident sapiente dicta neque quod.</p>
       <p>Aliquam <a href="">dicta</a> sequi culpa fugiat <a href="">consequuntur</a> pariatur optio ad minima, maxime <a href="">odio</a>, distinctio magni impedit tempore enim repellendus <a href="">repudiandae</a> quas!</p>
     </div>
-
   <script>
     // 👀👀👀👀👀👀👀👀👀👀👀👀👀👀👀
+    const hl = document.createElement('div');
+    hl.classList.add('highlight');
+    document.body.appendChild(hl);
+
+    [...document.querySelectorAll('a')].forEach(ele => {
+      ele.addEventListener('mouseenter', e => {
+        
+        var style = {
+          'width': `${ele.getBoundingClientRect().width}px`,
+          'height': `${ele.getBoundingClientRect().height}px`,
+          'transform': `translate(${ele.getBoundingClientRect().left + document.body.scrollLeft}px, 
+                                  ${ele.getBoundingClientRect().top + document.body.scrollTop}px)`
+        };
+
+        for (var attr in style) {
+          hl.style[attr] = style[attr];
+        }
+      }, false)
+    });
   </script>
 </body>
 </html>
