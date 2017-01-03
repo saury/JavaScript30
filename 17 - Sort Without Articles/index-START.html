@@ -59,9 +59,7 @@ cloneBands.map(obj => {
   obj.band = obj.band.replace(/^the |^an |^a /i, ' ').trim()
 })
 
-console.log(cloneBands);
 phantom = phantom.sort((a,b) => a > b ? 1 : -1)
-console.log(phantom);
 
 cloneBands.map(obj => {
   phantom.forEach((item, idx) =>{
@@ -69,8 +67,11 @@ cloneBands.map(obj => {
   })
 })
 
-console.clear()
-// console.
+result.forEach(value => {
+  var li = document.createElement('li');
+  li.innerHTML = value;
+  document.getElementById('bands').appendChild(li);
+})
 
 </script>
 

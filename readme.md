@@ -20,7 +20,7 @@
 14. [x] ~~JavaScript References vs. Copying~~
 15. [x] ~~LocalStorage~~
 16. [x] ~~Mouse Move Shadow~~
-17. [ ] Sort Without Articles
+17. [x] ~~Sort Without Articles~~
 18. [ ] Adding Up Times with Reduce
 19. [ ] Webcam Fun
 20. [ ] Speech Detection
