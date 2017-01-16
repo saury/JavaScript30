@@ -22,7 +22,7 @@
 16. [x] ~~Mouse Move Shadow~~
 17. [x] ~~Sort Without Articles~~
 18. [x] ~~Adding Up Times with Reduce~~
-19. [ ] Webcam Fun
+19. [x] ~~Webcam Fun~~
 20. [ ] Speech Detection
 21. [ ] Geolocation
 22. [x] ~~Follow Along Link Highlighter~~
