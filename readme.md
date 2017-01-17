@@ -14,7 +14,7 @@
 8. [x] ~~Fun with HTML5 Canvas~~
 9. [x] ~~Dev Tools Domination~~
 10. [x] ~~Hold Shift and Check Checkboxes~~
-11. [ ] Custom Video Player
+11. [x] ~~Custom Video Player~~
 12. [x] ~~Key Sequence Detection~~
 13. [x] ~~Slide in on Scroll~~
 14. [x] ~~JavaScript References vs. Copying~~
@@ -23,7 +23,7 @@
 17. [x] ~~Sort Without Articles~~
 18. [x] ~~Adding Up Times with Reduce~~
 19. [x] ~~Webcam Fun~~
-20. [ ] Speech Detection
+20. [x] ~~Speech Detection~~
 21. [ ] Geolocation
 22. [x] ~~Follow Along Link Highlighter~~
 23. [ ] Speech Synthesis
