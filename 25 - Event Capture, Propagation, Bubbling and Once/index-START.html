@@ -39,7 +39,19 @@
 
 <button></button>
 <script>
-
+  const targets = document.querySelectorAll('div');
+  const btn = document.querySelectorAll('button');
+  [].forEach.call(targets, (div) => {
+    div.addEventListener('click', e => {
+      console.log(div.className);
+    }, true)
+  });
+  
+  btn[0].addEventListener('click', e => {
+    console.log(`click, won't trigger any more`);
+  }, {
+    once: true
+  })
 </script>
 </body>
 </html>
