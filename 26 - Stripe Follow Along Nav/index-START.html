@@ -208,6 +208,27 @@
 </style>
 
 <script>
+  const hoverZone = document.querySelectorAll('.cool > li');
+  const bg = document.querySelector('.dropdownBackground');
+  const self = bg.getBoundingClientRect();
+
+  [].forEach.call(hoverZone, ele => {
+    ele.addEventListener('mouseenter', () => {
+      ele.classList.add('trigger-enter');
+      let info = ele.childNodes[3].getBoundingClientRect();
+      bg.classList.add('open');
+      bg.style.width = `${info.width}px`;
+      bg.style.height = `${info.height}px`;
+      bg.style.transform = `translate(${info.left - self.left}px, ${info.top - self.top}px)`;
+      ele.classList.add('trigger-enter-active');
+    }, false)
+    ele.addEventListener('mouseleave', () => {
+      ele.classList.remove('trigger-enter-active');
+      ele.classList.remove('trigger-enter');
+      bg.classList.remove('open');
+    }, false)
+  })
+
 </script>
 
 </body>
