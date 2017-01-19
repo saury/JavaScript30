@@ -24,7 +24,7 @@
 18. [x] ~~Adding Up Times with Reduce~~
 19. [x] ~~Webcam Fun~~
 20. [x] ~~Speech Detection~~
-21. [ ] Geolocation
+21. [x] ~~Geolocation~~
 22. [x] ~~Follow Along Link Highlighter~~
 23. [ ] Speech Synthesis
 24. [x] ~~Sticky Nav~~
