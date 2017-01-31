@@ -29,12 +29,40 @@
     </div>
 
 <script>
+  const synth = window.speechSynthesis;
   const msg = new SpeechSynthesisUtterance();
   let voices = [];
   const voicesDropdown = document.querySelector('[name="voice"]');
   const options = document.querySelectorAll('[type="range"], [name="text"]');
   const speakButton = document.querySelector('#speak');
   const stopButton = document.querySelector('#stop');
+
+  synth.onvoiceschanged = () => {
+    voices = synth.getVoices();
+    console.log(synth.getVoices());
+    
+    for(i = 0; i < voices.length ; i++) {
+      var option = document.createElement('option');
+      option.textContent = voices[i].name + ' (' + voices[i].lang + ')';
+      option.setAttribute('data-lang', voices[i].lang);
+      option.setAttribute('data-name', voices[i].name);
+      voicesDropdown.appendChild(option);
+    }
+  }
+
+  speakButton.addEventListener('click', e => {
+    e.preventDefault();
+    let selectedOption = voicesDropdown.selectedOptions[0].getAttribute('data-name');
+    for(i = 0; i < voices.length ; i++) {
+      if(voices[i].name === selectedOption) {
+        msg.voice = voices[i];
+      }
+    }
+    options.forEach(opt => {
+      msg[opt.name] = opt.value;
+    })
+    synth.speak(msg);
+  })
 </script>
 
 </body>

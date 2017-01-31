@@ -26,7 +26,7 @@
 20. [x] ~~Speech Detection~~
 21. [x] ~~Geolocation~~
 22. [x] ~~Follow Along Link Highlighter~~
-23. [ ] Speech Synthesis
+23. [x] ~~Speech Synthesis~~
 24. [x] ~~Sticky Nav~~
 25. [x] ~~Event Capture, Propagation, Bubbling, and Once~~
 26. [x] ~~Stripe Follow Along Nav~~
